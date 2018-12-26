@@ -1,0 +1,79 @@
+UBbear.baf      = Code Block for the Lycanthropy Variable
+UBbear00.2da  = CLABstyle File 
+UBbear01.SPL  = Berserking Spell 
+UBbear02.CRE = Werebear Creature 
+UBbear03.EFF = Knock-down Effect (no bonus save) 
+UBbear04.EFF = Knock-down Effect (-4 save) 
+UBbear05.ITM = Claw Weapon lvl1
+UBbear06.ITM = Claw Weapon lvl6 
+UBbear07.ITM = Claw Weapon lvl12 
+UBbear08.ITM = Claw Weapon lvl18 
+UBbear09.BAM = New Spell Icon (Werebear)
+UBBEARA.SPL = Shapeshifts Werebear Spell
+UBBEARB.SPL = Shapeshifts Natural Form Spell
+UBBEARC.SPL = AP_Shapeshifts Werebear Spell
+
+
+
+/////////////////////////////////
+///Lycanthropy Variable: UBlycant//
+///Werewolf: UBlycant=1//////////
+///Werebear: UBlycant=2//////////
+///Wererat:   UBlycant=3//////////
+/////////////////////////////////
+
+
+////////////////////////////////
+////////////File History//////////
+////////////////////////////////
+
+1.5 and before
+
+UBbear00.2da  = CLABstyle File 
+UBbear01.SPL  = Berserking Spell 
+UBbear02.CRE = Werebear Creature 
+UBbear03.EFF = Knock-down Effect (no bonus save) 
+UBbear04.EFF = Knock-down Effect (-4 save) 
+UBbear05.ITM = Claw Weapon lvl1
+UBbear06.ITM = Claw Weapon lvl6 
+UBbear07.ITM = Claw Weapon lvl12 
+UBbear08.ITM = Claw Weapon lvl18 
+UBbear09.BAM = New Spell Icon (Werebear)
+UBBEARA.SPL = Shapeshifts Werebear Spell
+UBBEARB.SPL = Shapeshifts Natural Form Spell
+UBBEARC.SPL = AP_Shapeshifts Werebear Spell
+
+
+1.4 and before
+
+UBbear00.2da  = CLABstyle File 
+UBbear01.SPL  = Berserking Spell 
+UBbear02.CRE = Werebear Creature 
+UBbear03.EFF = Knock-down Effect (no bonus save) 
+UBbear04.EFF = Knock-down Effect (-4 save) 
+UBbear05.ITM = Claw Weapon lvl1
+UBbear06.ITM = Claw Weapon lvl6 
+UBbear07.ITM = Claw Weapon lvl12 
+UBbear08.ITM = Claw Weapon lvl18 
+UBbear09.BAM = New Spell Icon (Werebear)
+UBBEARA.SPL = Shapeshifts Werebear Spell
+UBBEARB.SPL = Shapeshifts Natural Form Spell
+UBBEARC.SPL = AP_Shapeshifts Werebear Spell
+UBLYCA2.SPL = Lycanthropy Variable                                             //1.5: removed since any further would-be-mod will handle this per script
+
+1.2 and before
+
+UBbear00.2da  = CLABstyle File 
+UBbear01.SPL  = Berserking Spell 
+UBbear02.CRE = Werebear Creature 
+UBbear03.EFF = Knock-down Effect (no bonus save) 
+UBbear04.EFF = Knock-down Effect (-4 save) 
+UBbear05.ITM = Claw Weapon lvl3                                        //1.4: changed to level 1
+UBbear06.ITM = Claw Weapon lvl6 
+UBbear07.ITM = Claw Weapon lvl12 
+UBbear08.ITM = Claw Weapon lvl18 
+UBbear09.SPL = Ap_ - Shapeshifts Werebear Spell               // 1.3: changed to UBBEARC.SPL, CLABFILE set to AP_UBBEARC
+UBbear10.SPL = Shapeshifts Werebear Spell                        // 1.3: changed to UBBEARA.SPL
+UBbear11.SPL = Shapeshifts Natural Form Spell                  // 1.3: changed to UBBEARB.SPL
+UBbear12.SPL = Ap_ - SetVariable Spell                             // 1.3: changed to UBLYCA2.SPL
+UBbear13.BAM = New Spell Icon (Werebear)                      // 1.3: renamed to UBBEAR09.BAM

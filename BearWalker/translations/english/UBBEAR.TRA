@@ -1,0 +1,56 @@
+@1 = ~Bear Walker~
+@2 = ~BEAR WALKER: Their love for nature and a fierce devotion to protect home and family are principles shared by rangers and werebears alike. It is therefore not much of a surprise that some werebears choose the path of a ranger.
+Such a ranger is commonly referred to as a Bear Walker.
+Bear Walkers train their skills as a ranger but also develop their ability to shapeshift into werebear form.
+
+Since Bear Walkers focus on their shapeshifting abilities they are less proficient with weapons and armor than other rangers.
+
+Advantages:
+-  At level 1 gains the ability to shapeshift into a werebear.
+-  Werebear form improves as the ranger advances in levels.
+
+Disadvantages:
+-  May only become proficient (one star) with melee weapons.
+-  Cannot wear armor greater than studded leather.
+
+Werebear Form:
+ Immunity to polymorph and push-back effects.
+
+ Level  1:
+-  HP +15% / STR +1 / CON +1 / PHYSICAL, COLD, MAGIC RESIST 15% / Regenerates 1 HP every two rounds.
+-  Transformation lasts one minute.
+-  Character is berserking while shapeshifted (total loss of character control while in combat).
+-  Claws are considered to be of +2 enchantment and deal 2d4+2 slashing damage.
+-  50% chance on hit to knock opponents down unless they save vs. breath weapon.
+
+ Level  6:
+-  HP +30% / STR +1 / CON +2 / PHYSICAL, COLD, MAGIC RESIST  30% / Regenerates 1 HP every round.
+-  Transformation lasts until canceled.
+-  Partial ability to talk and cast spells (75% casting failure - does not affect innate abilites).
+-  Berserking if character's HP drop below 50%.
+-  Claws are considered to be of +3 enchantment and deal 3d4+3 slashing damage.
+-  50% chance on hit to knock opponents down unless they save vs. breath weapon.
+
+ Level 12:
+-  HP +45% / STR +2 / CON +4 / PHYSICAL, COLD, MAGIC RESIST  45% / Regenerates 1 HP every 3 seconds.
+-  Transformation lasts until canceled.
+-  Partial ability to talk and cast spells (50% casting failure - does not affect innate abilites).
+-  Berserking if character's HP drop below 25%.
+-  Claws are considered to be of +4 enchantment and deal 4d4+4 slashing damage.
+-  50% chance on hit to knock opponents down unless they save vs. breath weapon.
+
+ Level 18:
+-  HP +60% / STR +2 / CON +4 / PHYSICAL, COLD, MAGIC RESIST  60% / Regenerates 1 HP every second.
+-  Transformation lasts until canceled.
+-  Partial ability to talk and cast spells (25% casting failure - does not affect innate abilites)
+-  Berserking if character's HP drop below 10%.
+-  Claws are considered to be of +5 enchantment and deal 5d4+5 slashing damage.
+-  50% chance on hit to knock opponents down unless they save vs. breath weapon (-4 ).~
+@3 = ~Werebear~
+@4 = ~Claw~
+@5 = ~Berserking~
+@6 = ~Shapeshifts Werebear~
+@7 = ~Shapeshifts Natural Form~
+@8 = ~bear walker~
+@9 = ~Enhanced Editions Version~
+@10 = ~Classic BG2/ToB/BGT/TuTu Version~

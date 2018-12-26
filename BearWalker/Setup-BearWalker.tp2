@@ -1,0 +1,448 @@
+BACKUP ~BearWalker/backup~ // So WeiDU can uninstall
+AUTHOR ~Mod Forum: http://www.shsforums.net/topic/56049-the-bear-walker-a-werebearranger-kit/~ // Contact address displayed if installation fails
+README ~BearWalker/readme_bear_walker.pdf~ // Shows readme file
+
+ALWAYS
+  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+  INCLUDE ~%MOD_FOLDER%/lib/handle_charsets.tpa~
+
+  // No exception, everything needs to be converted
+  ACTION_DEFINE_ARRAY UBnoconvert BEGIN END
+
+  // ubbear.tra needs to be reloaded?
+  ACTION_DEFINE_ARRAY UBreload BEGIN ubbear END
+
+  // There is no "language" folder so the root of all languages is %MOD_FOLDER%
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      infer_charset = 1
+    STR_VAR
+      tra_path = EVAL ~%MOD_FOLDER%/translations~
+	  noconvert_array = UBnoconvert
+      reload_array = UBreload
+  END
+    ACTION_IF (NOT GAME_IS ~soa tob iwd2 pst bg1 totsc iwd how totlm tutu tutu_totsc bgt ca iwd_in_bg2 bg2ee eet iwdee~) THEN BEGIN     // Check if BGEE/SOD
+COPY ~BearWalker/files/25STWEAP.2DA~ ~override~                                                               // Add working 25STWEAP.2DA copy from BGII so ADD_KIT command doesn't break
+END
+END
+
+
+LANGUAGE ~English~  ~english~ ~BearWalker/translations/english/ubbear.tra~
+LANGUAGE ~Deutsch~  ~german~  ~BearWalker/translations/german/ubbear.tra~
+
+BEGIN 
+~ BEAR WALKER KIT for Enhanced Editions. ~ // EE Version
+REQUIRE_PREDICATE (NOT GAME_IS ~soa tob iwd2 pst bg1 totsc iwd how totlm tutu tutu_totsc bgt ca iwd_in_bg2~) @9 //Check if EE game
+
+
+// EE compatibility patch, updated version by Subtledoctor
+INCLUDE ~BearWalker/lib/fl#add_kit_ee.tpa~
+
+// Internal name of the kit
+ADD_KIT ~UBbear~
+
+  // Appended to CLASWEAP.2da
+  ~UBbear                1           1           1           1           1           1           1           1~
+
+  // Appended column-wise to WEAPPROF.2da
+  ~UBbear 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 1 1 1 1 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+     
+  // Appended to ABCLASRQ.2da
+  ~UBbear                13      0      13      0       0       0~
+
+  // Appended to ABCLSMOD.2da
+  ~UBbear                0       0       0      0       0       0~
+
+  // Appended to ABDCDSRQ.2da
+  ~UBbear                17      17     0       0       17      0~
+
+  // Appended to ABDCSCRQ.2da
+  ~UBbear                15      15     0       0       15       0~
+
+  // Appended to ALIGNMNT.2da
+  ~UBbear                1       0       0       1       0       0       1      0       0~
+
+  // Appended to DUALCLAS.2da
+  ~UBbear                0       0       0       0       0       0~
+
+  // Path to my CLAB.2da file 
+  ~BearWalker/files/UBbear00.2da~
+
+  // PC races and classes allowed to use this kit, from KITTABLE.2da
+  ~K_R_H K_R_D K_R_HL K_R_G K_R_HO K_R_E K_R_HE~
+
+  // Usability flags, added to the end of the KITLIST.2da entry
+  ~0x00010000        12~
+
+  // HLA table to use; see LUABBR.2da
+  ~Ra0~
+
+  // List of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+  ~LEAT14 * HELM07 BAG20 RING06 RING31 * BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN4,2 POTN14,5 HAM07 SW1H27 STAF08~
+
+  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da 
+  SAY @8
+  SAY @1
+  SAY @2
+  
+  // Call EE compatibility patch
+  LAF fl#add_kit_ee
+  STR_VAR
+  kit_name = UBbear
+  END
+
+// Copy stuff over to override
+
+COPY ~BearWalker/filesEE/UBbear02.CRE~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+
+COPY ~BearWalker/filesEE/UBbear05.ITM~ ~override~
+  SAY NAME1 @4 // unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+COPY ~BearWalker/filesEE/UBbear06.ITM~ ~override~
+  SAY NAME1 @4 // unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+COPY ~BearWalker/filesEE/UBbear07.ITM~ ~override~
+  SAY NAME1 @4 // unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+COPY ~BearWalker/filesEE/UBbear08.ITM~ ~override~
+  SAY NAME1 @4// unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+
+COPY ~BearWalker/files/UBbear01.SPL~ ~override~
+  SAY NAME1 @5 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @5 // unidentified description for items, spell description for spells
+
+
+COPY ~BearWalker/files/UBBEARA.SPL~ ~override~
+  SAY NAME1 @6 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @6 // unidentified description for items, spell description for spells
+
+COPY ~BearWalker/files/UBBEARB.SPL~ ~override~
+  SAY NAME1 @7 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @7 // unidentified description for items, spell description for spells
+
+COPY ~BearWalker/files/UBbear09.BAM~ ~override~
+
+COPY ~BearWalker/files2~ ~override~
+
+//Add werebear animation
+APPEND ~animate.ids~ ~0xE330 WEREBEAR_D2~ UNLESS ~^0xE330~  //write animate.ids
+COPY ~BearWalker/animationsEE~ ~override~    //copy werebear animation files
+
+
+//If Divine Remix v3+  is installed prior to the bear walker kit this will fix the spell progression
+ACTION_IF ((FILE_EXISTS_IN_GAME ~cdnegpp.spl~) AND (FILE_EXISTS ~Divine_Remix/lib/macro_reindex_clab.tph~)) THEN BEGIN
+
+  INCLUDE ~Divine_Remix/lib/extra_regexp_vars.tph~
+  INCLUDE ~Divine_Remix/lib/macro_remove_blank_lines_from_eof.tph~
+  INCLUDE ~Divine_Remix/lib/macro_reindex_clab.tph~
+  INCLUDE ~Divine_Remix/lib/macro_add_ranger_spells.tph~
+  INCLUDE ~Divine_Remix/lib/macro_shift_ranger_spells.tph~
+  INCLUDE ~Divine_Remix/lib/macro_spell_remove_good.tph~
+  COPY_EXISTING ~UBbear00.2da~ ~override~
+        LAUNCH_PATCH_MACRO ~remove_blank_lines_from_eof~ // purge lines
+        LAUNCH_PATCH_MACRO ~add_ranger_spells~ // add generic ranger spells
+        LAUNCH_PATCH_MACRO ~spell_remove_good~ // removes evil, neutral-only spells
+        LAUNCH_PATCH_MACRO ~shift_ranger_spells~ // shift ranger spells
+        LAUNCH_PATCH_MACRO ~reindex_clab~ // re-index lines
+        BUT_ONLY_IF_IT_CHANGES
+
+END
+
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////Classic Versions below//////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+
+BEGIN 
+~ Standard version <RECOMMENDED>
+This version uses the real werebear animation but REQUIRES the [Infinity Animation core mod] to be installed. ~ // Option 1 of the main component
+SUBCOMPONENT ~BEAR WALKER KIT~                                                                        // Name of the main component
+REQUIRE_PREDICATE (GAME_IS ~soa tob tutu tutu_totsc bgt~) @10   // None EE versions only
+// use this once sod gets released: REQUIRE_PREDICATE (NOT GAME_IS ~bgee bg2ee eet sod~) @10   // None EE versions only
+
+ACTION_IF (NOT FILE_CONTAINS_EVALUATED (~anisnd.ids~ ~µAO~)) BEGIN           // check if IA core is installed
+    PRINT ~|||WARNING|||WARNING|||WARNING|||WARNING|||WARNING|||~
+    PRINT ~Could not detect [Infinity Animations core mod]!~
+    PRINT ~You may still proceed with the installation,~ 
+    PRINT ~but should ONLY do so if you are REALLY going to~
+    PRINT ~install [Infinity Animations core mod] later on.~
+    PRINT ~|||WARNING|||WARNING|||WARNING|||WARNING|||WARNING|||~
+    PRINT ~ CHOOSE ONE OPTION:
+
+0] Proceed with the installation and install [Infinity Animations core mod] later on.
+1] Go back to the main menue and choose another installation option.~
+
+    ACTION_READLN selection
+    OUTER_WHILE (~%selection%~ STRING_COMPARE 1) && (~%selection%~ STRING_COMPARE 0) BEGIN
+    PRINT ~ CHOOSE ONE OPTION::
+
+0] Proceed with the installation and install [Infinity Animations core mod] later on.
+1] Go back to the main menue and choose another installation option.~
+
+    ACTION_READLN selection
+    END
+
+    ACTION_IF selection THEN BEGIN
+       FAIL ~MISSING MOD: [Infinity Animations core mod]~                                           // fail install and go back to the main menue
+    END
+END
+
+// Internal name of the kit
+ADD_KIT ~UBbear~
+
+  // Appended to CLASWEAP.2da
+  ~UBbear                1           1           1           1           1           1           1           1~
+
+  // Appended column-wise to WEAPPROF.2da
+  ~UBbear 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 1 1 1 1 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+     
+  // Appended to ABCLASRQ.2da
+  ~UBbear                13      0      13      0       0       0~
+
+  // Appended to ABCLSMOD.2da
+  ~UBbear                0       0       0      0       0       0~
+
+  // Appended to ABDCDSRQ.2da
+  ~UBbear                17      17     0       0       17      0~
+
+  // Appended to ABDCSCRQ.2da
+  ~UBbear                15      15     0       0       15       0~
+
+  // Appended to ALIGNMNT.2da
+  ~UBbear                1       0       0       1       0       0       1      0       0~
+
+  // Appended to DUALCLAS.2da
+  ~UBbear                0       0       0       0       0       0~
+
+  // Path to my CLAB.2da file 
+  ~BearWalker/files/UBbear00.2da~
+
+  // PC races and classes allowed to use this kit, from KITTABLE.2da
+  ~K_R_H K_R_D K_R_HL K_R_G K_R_HO K_R_E K_R_HE~
+
+  // Usability flags, added to the end of the KITLIST.2da entry
+  ~0x00010000        12~
+
+  // HLA table to use; see LUABBR.2da
+  ~Ra0~
+
+  // List of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+  ~LEAT14 * HELM07 BAG20 RING06 RING31 * BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN4,2 POTN14,5 HAM07 SW1H27 STAF08~
+
+  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da 
+  SAY @8
+  SAY @1
+  SAY @2
+
+// Copy stuff over to override
+
+COPY ~BearWalker/files/UBbear02.CRE~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+
+COPY ~BearWalker/files/UBbear05.ITM~ ~override~
+  SAY NAME1 @4 // unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+COPY ~BearWalker/files/UBbear06.ITM~ ~override~
+  SAY NAME1 @4 // unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+COPY ~BearWalker/files/UBbear07.ITM~ ~override~
+  SAY NAME1 @4 // unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+COPY ~BearWalker/files/UBbear08.ITM~ ~override~
+  SAY NAME1 @4// unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+
+COPY ~BearWalker/files/UBbear01.SPL~ ~override~
+  SAY NAME1 @5 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @5 // unidentified description for items, spell description for spells
+
+
+COPY ~BearWalker/files/UBBEARA.SPL~ ~override~
+  SAY NAME1 @6 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @6 // unidentified description for items, spell description for spells
+
+COPY ~BearWalker/files/UBBEARB.SPL~ ~override~
+  SAY NAME1 @7 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @7 // unidentified description for items, spell description for spells
+
+COPY ~BearWalker/files/UBbear09.BAM~ ~override~
+
+COPY ~BearWalker/files2~ ~override~
+
+////////////////////////////////////////////////////////////////////////
+///////////////////Add werebear animation///////////////////////////////
+////////////////////////////////////////////////////////////////////////
+APPEND ~animate.ids~ ~0x5294 WEREBEAR_D2~ UNLESS ~^0x5294~ 							   //write animate.ids
+APPEND ~anisnd.ids~ ~0x5294 µDJ      CGAMEANIMATIONTYPE_WEREBEAR_D2~ UNLESS ~^0x5294~  //write anisnd.ids
+COPY ~BearWalker/animations~ ~override~  											   //copy werebear animation files
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~aniwksnd.2da~) THEN BEGIN                              // Check for ToBEx external sound files
+   APPEND ~aniwksnd.2da~ ~0x5294 WEREBEAR_D2      TERRAIN	*~  UNLESS ~^0x5294~       // Write aniwksnd.2da   
+END
+
+//If Divine Remix v3+  is installed prior to the bear walker kit this will fix the spell progression
+ACTION_IF ((FILE_EXISTS_IN_GAME ~cdnegpp.spl~) AND (FILE_EXISTS ~Divine_Remix/lib/macro_reindex_clab.tph~)) THEN BEGIN
+
+  INCLUDE ~Divine_Remix/lib/extra_regexp_vars.tph~
+  INCLUDE ~Divine_Remix/lib/macro_remove_blank_lines_from_eof.tph~
+  INCLUDE ~Divine_Remix/lib/macro_reindex_clab.tph~
+  INCLUDE ~Divine_Remix/lib/macro_add_ranger_spells.tph~
+  INCLUDE ~Divine_Remix/lib/macro_shift_ranger_spells.tph~
+  INCLUDE ~Divine_Remix/lib/macro_spell_remove_good.tph~
+  COPY_EXISTING ~UBbear00.2da~ ~override~
+        LAUNCH_PATCH_MACRO ~remove_blank_lines_from_eof~ // purge lines
+        LAUNCH_PATCH_MACRO ~add_ranger_spells~ // add generic ranger spells
+        LAUNCH_PATCH_MACRO ~spell_remove_good~ // removes evil, neutral-only spells
+        LAUNCH_PATCH_MACRO ~shift_ranger_spells~ // shift ranger spells
+        LAUNCH_PATCH_MACRO ~reindex_clab~ // re-index lines
+        BUT_ONLY_IF_IT_CHANGES
+
+END
+
+
+BEGIN 
+~ Light version <NOT RECOMMENDED>
+This version only uses the vanilla brown bear animation but DOESN'T REQUIRE the [Infinity Animation core mod] to be installed. ~ // Option 2 of the main component
+SUBCOMPONENT ~BEAR WALKER KIT~ // Name of the main component
+REQUIRE_PREDICATE (GAME_IS ~soa tob tutu tutu_totsc bgt~) @10   // None EE versions only
+// use this once sod gets released: REQUIRE_PREDICATE (NOT GAME_IS ~bgee bg2ee eet sod~) @10   // None EE versions only
+ADD_KIT ~UBbear~
+
+  // Appended to CLASWEAP.2da
+  ~UBbear                1           1           1           1           1           1           1           1~
+
+  // Appended column-wise to WEAPPROF.2da
+  ~UBbear 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 1 1 1 1 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+     
+  // Appended to ABCLASRQ.2da
+  ~UBbear                13      0      13      0       0       0~
+
+  // Appended to ABCLSMOD.2da
+  ~UBbear                0       0       0      0       0       0~
+
+  // Appended to ABDCDSRQ.2da
+  ~UBbear                17      17     0       0       17      0~
+
+  // Appended to ABDCSCRQ.2da
+  ~UBbear                15      15     0       0       15       0~
+
+  // Appended to ALIGNMNT.2da
+  ~UBbear                1       0       0       1       0       0       1      0       0~
+
+  // Appended to DUALCLAS.2da
+  ~UBbear                0       0       0       0       0       0~
+
+  // Path to my CLAB.2da file 
+  ~BearWalker/files/UBbear00.2da~
+
+  // PC races and classes allowed to use this kit, from KITTABLE.2da
+  ~K_R_H K_R_D K_R_HL K_R_G K_R_HO K_R_E K_R_HE~
+
+  // Usability flags, added to the end of the KITLIST.2da entry
+  ~0x00010000        12~
+
+  // HLA table to use; see LUABBR.2da
+  ~Ra0~
+
+  // List of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+  ~LEAT14 * HELM07 BAG20 RING06 RING31 * BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN4,2 POTN14,5 HAM07 SW1H27 STAF08~
+
+  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da 
+  SAY @8
+  SAY @1
+  SAY @2
+
+// Copy stuff over to override
+
+COPY ~BearWalker/files_mac/UBbear02.CRE~ ~override~
+  SAY NAME1 @3 // unidentified name for items OR spell name
+
+COPY ~BearWalker/files_mac/UBbear05.ITM~ ~override~
+  SAY NAME1 @4 // unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+COPY ~BearWalker/files_mac/UBbear06.ITM~ ~override~
+  SAY NAME1 @4 // unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+COPY ~BearWalker/files_mac/UBbear07.ITM~ ~override~
+  SAY NAME1 @4 // unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+COPY ~BearWalker/files_mac/UBbear08.ITM~ ~override~
+  SAY NAME1 @4// unidentified name for items OR spell name
+  SAY NAME2 @4 // identified name for items; not used for spells
+  SAY UNIDENTIFIED_DESC @4 // unidentified description for items, spell description for spells
+  SAY DESC @4 // identified description for items, unused for spells
+
+
+COPY ~BearWalker/files/UBbear01.SPL~ ~override~
+  SAY NAME1 @5 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @5 // unidentified description for items, spell description for spells
+
+
+COPY ~BearWalker/files_mac/UBBEARA.SPL~ ~override~
+  SAY NAME1 @6 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @6 // unidentified description for items, spell description for spells
+
+COPY ~BearWalker/files/UBBEARB.SPL~ ~override~
+  SAY NAME1 @7 // unidentified name for items OR spell name
+  SAY UNIDENTIFIED_DESC @7 // unidentified description for items, spell description for spells
+
+COPY ~BearWalker/files2~ ~override~
+
+//If Divine Remix v3+  is installed prior to the bear walker kit this will fix the spell progression
+ACTION_IF ((FILE_EXISTS_IN_GAME ~cdnegpp.spl~) AND (FILE_EXISTS ~Divine_Remix/lib/macro_reindex_clab.tph~)) THEN BEGIN
+
+  INCLUDE ~Divine_Remix/lib/extra_regexp_vars.tph~
+  INCLUDE ~Divine_Remix/lib/macro_remove_blank_lines_from_eof.tph~
+  INCLUDE ~Divine_Remix/lib/macro_reindex_clab.tph~
+  INCLUDE ~Divine_Remix/lib/macro_add_ranger_spells.tph~
+  INCLUDE ~Divine_Remix/lib/macro_shift_ranger_spells.tph~
+  INCLUDE ~Divine_Remix/lib/macro_spell_remove_good.tph~
+  COPY_EXISTING ~UBbear00.2da~ ~override~
+        LAUNCH_PATCH_MACRO ~remove_blank_lines_from_eof~ // purge lines
+        LAUNCH_PATCH_MACRO ~add_ranger_spells~ // add generic ranger spells
+        LAUNCH_PATCH_MACRO ~spell_remove_good~ // removes evil, neutral-only spells
+        LAUNCH_PATCH_MACRO ~shift_ranger_spells~ // shift ranger spells
+        LAUNCH_PATCH_MACRO ~reindex_clab~ // re-index lines
+        BUT_ONLY_IF_IT_CHANGES
+
+END
+

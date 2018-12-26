@@ -1,0 +1,55 @@
+@1 = ~Bärengänger~
+@2 = ~BÄRENGÄNGER: Die Liebe zur Natur und die inbrünstige Verteidigung von Heim und Familie sind Eigenschaften welche Waldläufer und Werbären gemeinsam haben. Es ist daher nicht verwunderlich dass es Werbären gibt die sich entschlossen haben dem Pfad des Waldläufers zu folgen.
+Solch ein Waldläufer wird im Volksmund als Bärengänger bezeichnet.
+Bärengänger sind nicht nur ständig damit beschäftigt ihre Fähigkeiten als Waldläufer zu verbessern sondern trainieren gleichzeitig auch ihre Fähigkeit die Gestalt eines Werbären anzunehmen.
+Da Bärengänger einen großen Teil ihrer Zeit damit verbringen ihre Gestaltwandlungsfähigkeit zu verbessern sind sie im Umgang mit Nahkampfwaffen und Rüstungen weniger geschult als andere Waldläufer.
+
+Vorteile:
+- Kann sich ab Stufe 1 in einen Werbären verwandeln.
+- Die Werbären-Form verbessert sich mit ansteigender Stufe des Waldläufers.
+
+Nachteile:
+- Kann nur begrenzte Fähigkeiten (max. 1 Stern) mit Nahkampfwaffen erlangen.
+- Kann maximal beschlagene Lederrüstungen verwenden.
+
+Werbären-Form:
+ Immun gegen Verwandlungs- und Zurückstoßungseffekte.
+
+ Stufe 1:
+- Trefferpunkte +15% / STR +1 / KON +1 / Phys., Kälte, Magie Resistenz 15% / Regeneriert 1 Trefferpunkt alle zwei Runden.
+- Verwandlung hält eine Minute lang an.
+- Berserker-Rausch während der Verwandlung. (Kompletter Kontrollverlust während des Kampfes.)
+- Pranken gelten als +2 verzaubert und können 2W4+2 Klingen-Schaden zufügen.
+- 50% Chance den Gegner bei einem Nahkampftreffer niederzuschmettern. (Rettungswurf gegen Odem-Angriffe negiert den Effekt.)
+
+ Stufe 6:
+- Trefferpunkte +30% / STR +1 / KON +2 / Phys., Kälte, Magie Resistenz 30% / Regeneriert 1 Trefferpunkt pro Runde.
+- Verwandlung hält bis zur gewollten Rückverwandlung an.
+- Zauber haben eine 75% Chance fehlzuschlagen. (Gilt nicht für Spezialfähigkeiten.)
+- Berserker-Rausch wenn die maximalen Trefferpunkte unter 50% sinken. (Kompletter Kontrollverlust während des Kampfes.)
+- Pranken gelten als +3 verzaubert und können 3W4+3 Klingen-Schaden zufügen.
+- 50% Chance den Gegner bei einem Nahkampftreffer niederzuschmettern. (Rettungswurf gegen Odem-Angriffe negiert den Effekt.)
+
+ Stufe 12:
+- Trefferpunkte +45% / STR +2 / KON +4 / Phys., Kälte, Magie Resistenz 45% / Regeneriert 1 Trefferpunkt alle 3 Sekunden.
+- Verwandlung hält bis zur gewollten Rückverwandlung an.
+- Zauber haben eine 50% Chance fehlzuschlagen. (Gilt nicht für Spezialfähigkeiten.)
+- Berserker-Rausch wenn die maximalen Trefferpunkte unter 25% sinken. (Kompletter Kontrollverlust während des Kampfes.)
+- Pranken gelten als +4 verzaubert und können 4W4+4 Klingen-Schaden zufügen.
+- 50% Chance den Gegner bei einem Nahkampftreffer niederzuschmettern. (Rettungswurf gegen Odem-Angriffe negiert den Effekt.)
+
+ Stufe 18:
+- Trefferpunkte +60% / STR +2 / KON +4 / Phys., Kälte, Magie Resistenz 60% / Regeneriert 1 Trefferpunkt pro Sekunde.
+- Verwandlung hält bis zur gewollten Rückverwandlung an.
+- Zauber haben eine 25% Chance fehlzuschlagen. (Gilt nicht für Spezialfähigkeiten.)
+- Berserker-Rausch wenn die maximalen Trefferpunkte unter 10% sinken. (Kompletter Kontrollverlust während des Kampfes.)
+- Pranken gelten als +5 verzaubert und können 5W4+5 Klingen-Schaden zufügen.
+- 50% Chance den Gegner bei einem Nahkampftreffer niederzuschmettern. (Rettungswurf gegen Odem-Angriffe -4 negiert den Effekt.)~
+@3 = ~Werbär~
+@4 = ~Pranke~
+@5 = ~Berserker-Rausch~
+@6 = ~Gestaltwandlung Werbär~
+@7 = ~Natürliche Form des Gestaltwandlers~
+@8 = ~bärengänger~
+@9 = ~Enhanced Editions Version~
+@10 = ~Classic BG2/ToB/BGT/TuTu Version~
