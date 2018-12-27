@@ -1,6 +1,7 @@
 BACKUP ~BearWalker/backup~ // So WeiDU can uninstall
 AUTHOR ~Mod Forum: http://www.shsforums.net/topic/56049-the-bear-walker-a-werebearranger-kit/~ // Contact address displayed if installation fails
 README ~BearWalker/readme_bear_walker.pdf~ // Shows readme file
+VERSION ~3.0~
 
 ALWAYS
   // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
@@ -178,7 +179,7 @@ SUBCOMPONENT ~BEAR WALKER KIT~                                                  
 REQUIRE_PREDICATE (GAME_IS ~soa tob tutu tutu_totsc bgt~) @10   // None EE versions only
 // use this once sod gets released: REQUIRE_PREDICATE (NOT GAME_IS ~bgee bg2ee eet sod~) @10   // None EE versions only
 
-ACTION_IF (NOT FILE_CONTAINS_EVALUATED (~anisnd.ids~ ~µAO~)) BEGIN           // check if IA core is installed
+ACTION_IF (NOT FILE_CONTAINS_EVALUATED (~anisnd.ids~ ~ÂµAO~)) BEGIN           // check if IA core is installed
     PRINT ~|||WARNING|||WARNING|||WARNING|||WARNING|||WARNING|||~
     PRINT ~Could not detect [Infinity Animations core mod]!~
     PRINT ~You may still proceed with the installation,~ 
@@ -303,7 +304,7 @@ COPY ~BearWalker/files2~ ~override~
 ///////////////////Add werebear animation///////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 APPEND ~animate.ids~ ~0x5294 WEREBEAR_D2~ UNLESS ~^0x5294~ 							   //write animate.ids
-APPEND ~anisnd.ids~ ~0x5294 µDJ      CGAMEANIMATIONTYPE_WEREBEAR_D2~ UNLESS ~^0x5294~  //write anisnd.ids
+APPEND ~anisnd.ids~ ~0x5294 ÂµDJ      CGAMEANIMATIONTYPE_WEREBEAR_D2~ UNLESS ~^0x5294~  //write anisnd.ids
 COPY ~BearWalker/animations~ ~override~  											   //copy werebear animation files
 
 ACTION_IF (FILE_EXISTS_IN_GAME ~aniwksnd.2da~) THEN BEGIN                              // Check for ToBEx external sound files
