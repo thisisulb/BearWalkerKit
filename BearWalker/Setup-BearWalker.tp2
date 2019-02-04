@@ -6,6 +6,7 @@ VERSION ~3.0~
 ALWAYS
   // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
   INCLUDE ~%MOD_FOLDER%/lib/handle_charsets.tpa~
+  INCLUDE ~%MOD_FOLDER%/lib/RA_SPHERE_COMPAT.tpa~ // Raduziel's DoF's sphere system
 
   // No exception, everything needs to be converted
   ACTION_DEFINE_ARRAY UBnoconvert BEGIN END
@@ -90,6 +91,11 @@ ADD_KIT ~UBbear~
   LAF fl#add_kit_ee
   STR_VAR
   kit_name = UBbear
+  END
+  
+  // sphere support
+  ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+  LAF RA_SPHERE_COMPAT STR_VAR kitname = ~UBbear~ clabfile = ~UBbear00~ END
   END
 
 // Copy stuff over to override
